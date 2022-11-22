@@ -1,11 +1,21 @@
 package atividade1;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ConverterIdade {
     public static void main(String[] args) {
-        estrategia1();
-        estrategia2();
+        try {
+            estrategia1();
+            estrategia2();
+        } catch (InputMismatchException e){
+            System.out.println("Informe números inteirros");
+        } catch (NumberFormatException e){
+            System.out.println("Infome os dados no formato indicado");
+        } catch (Exception e){
+            System.out.println("Ocorreu um erro desconhecido");
+            System.out.println(e.getMessage());
+        }
     }
 
     private static void estrategia2() {
